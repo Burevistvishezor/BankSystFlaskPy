@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank System</title>
+</head>
+<body>
+    <h1>Bank Accounts</h1>
+    <ul>
+        {% for acc in accounts %}
+            <li><a href="{{ url_for('account', owner=acc.owner) }}">{{ acc.owner }}: {{ acc.balance }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <h2>Create Account</h2>
+    <form method="POST">
+        Name: <input type="text" name="owner" required>
+        Balance: <input type="number" name="balance" step="0.01" required>
+        <button type="submit">Create</button>
+    </form>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+</body>
+</html>
