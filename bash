@@ -1,3 +1,12 @@
+# Создаём папку проекта
+mkdir BankSystemFlask
+cd BankSystemFlask
+
+# Инициализируем git
+git init
+
+# Копируем туда файлы:
+# bank.py, app.py, accounts.json, templates/, static/
 # Создаём виртуальное окружение
 python -m venv venv
 
