@@ -1,3 +1,14 @@
+# Создаём виртуальное окружение
+python -m venv venv
+
+# Активируем (Windows)
+venv\Scripts\activate
+
+# Активируем (Mac/Linux)
+source venv/bin/activate
+
+# Устанавливаем Flask
+pip install Flask
 # Добавляем все файлы
 git add .
 
