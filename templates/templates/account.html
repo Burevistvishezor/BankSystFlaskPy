@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ account.owner }} - Bank</title>
+</head>
+<body>
+    <h1>{{ account.owner }}'s Account</h1>
+    <p>Balance: {{ account.balance }}</p>
+
+    <h2>Deposit / Withdraw</h2>
+    <form method="POST">
+        Amount: <input type="number" name="amount" step="0.01" required>
+        <button type="submit" name="action" value="deposit">Deposit</button>
+        <button type="submit" name="action" value="withdraw">Withdraw</button>
+    </form>
+
+    <h2>Transfer</h2>
+    <form method="POST">
+        To: 
+        <select name="to_owner">
+            {% for acc in accounts %}
+                {% if acc.owner != account.owner %}
+                    <option value="{{ acc.owner }}">{{ acc.owner }}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+        Amount: <input type="number" name="amount" step="0.01" required>
+        <button type="submit" name="action" value="transfer">Transfer</button>
+    </form>
+
+    <h2>Transactions</h2>
+    <ul>
+        {% for t in account.transactions %}
+            <li>{{ t.time }} - {{ t.type }} {% if t.to %}to {{ t.to }}{% endif %}: {{ t.amount }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('index') }}">Back to all accounts</a>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+</body>
+</html>
