@@ -1,1 +1,11 @@
 
+BankSystemFlask/
+│
+├─ app.py           # Flask приложение
+├─ bank.py          # Логика Bank и BankAccount
+├─ accounts.json    # Сохранение данных
+├─ templates/
+│   ├─ index.html
+│   └─ account.html
+└─ static/
+    └─ style.css
