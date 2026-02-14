@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank System Mock Screenshot</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 20px;}
+        h1 { color: #333; }
+        .account { background: #fff; padding: 15px; margin-bottom: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);}
+        .account p { margin: 5px 0; }
+        .button { display: inline-block; padding: 6px 12px; background: #007BFF; color: #fff; border-radius: 4px; text-decoration: none; margin-right: 5px; }
+        .transactions { font-size: 0.9em; color: #555; }
+    </style>
+</head>
+<body>
+    <h1>Bank System Flask</h1>
+
+    <div class="account">
+        <h2>Alex</h2>
+        <p>Balance: 120.00</p>
+        <a class="button" href="#">Deposit</a>
+        <a class="button" href="#">Withdraw</a>
+        <a class="button" href="#">Transfer</a>
+        <div class="transactions">
+            <p>2026-02-14 12:00: Deposit: 100</p>
+            <p>2026-02-14 12:05: Withdraw: 30</p>
+            <p>2026-02-14 12:10: Transfer to John: 50</p>
+        </div>
+    </div>
+
+    <div class="account">
+        <h2>John</h2>
+        <p>Balance: 80.00</p>
+        <a class="button" href="#">Deposit</a>
+        <a class="button" href="#">Withdraw</a>
+        <a class="button" href="#">Transfer</a>
+        <div class="transactions">
+            <p>2026-02-14 12:10: Received Transfer from Alex: 50</p>
+        </div>
+    </div>
+
+</body>
+</html>
